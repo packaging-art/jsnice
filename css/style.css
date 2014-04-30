@@ -180,6 +180,8 @@ h5 {
   margin-bottom: 3em; }
   .app_section textarea {
     width: 100%; }
+  .app_section h1 {
+    margin-bottom: 60px; }
 
 .input_col, .results_col {
   width: 49%;
