@@ -1,0 +1,367 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  height: 100%;
+  overflow-y: scroll; }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #47484c;
+  font-weight: normal;
+  line-height: 1.7em;
+  background: #faf9f7; }
+
+a {
+  text-decoration: none;
+  color: #5e57a6; }
+
+a:hover {
+  color: #38afd1; }
+
+h1, h2, h3, h5 {
+  font-family: din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased; }
+
+h1 {
+  font-size: 18px;
+  color: #5e57a6;
+  margin-top: 0;
+  margin-bottom: 80px;
+  text-align: center; }
+
+h2 {
+  font-size: 36px;
+  color: #47484c;
+  margin: 20px 0;
+  text-align: center; }
+
+h3 {
+  font-size: 24px;
+  color: #5e57a6;
+  margin: 30px 0;
+  text-align: center; }
+
+h4 {
+  font-size: 14px;
+  color: #47484c;
+  margin-bottom: -10px;
+  font-weight: bold; }
+
+h5 {
+  font-size: 22px;
+  color: #5e57a6;
+  margin: 0px 0 10px;
+  text-align: center; }
+
+.container {
+  width: 100%;
+  padding: 0; }
+
+.post {
+  width: 780px;
+  margin: 30px auto 120px;
+  padding: 10px 0;
+  border-top: 2px solid #d9d9d9; }
+
+.post p {
+  margin: 14px 0 14px 0; }
+
+.post p.highlight {
+  text-align: center;
+  font-size: 18px;
+  margin: 30px 60px;
+  color: #777;
+  font-weight: normal;
+  line-height: 1.75em; }
+
+.post .two_col1 {
+  float: left;
+  width: 360px;
+  padding-right: 28px;
+  padding-top: 10px; }
+
+.post .two_col2 {
+  float: left;
+  width: 360px;
+  padding-left: 29px;
+  padding-top: 10px; }
+
+.post .three_cols {
+  padding-top: 20px; }
+
+.post .three_cols > div {
+  float: left;
+  margin: 0 40px;
+  width: 180px;
+  text-align: center; }
+
+.post .three_cols img {
+  margin: 0 auto; }
+
+#tool.post {
+  border: 0;
+  margin-bottom: 180px; }
+
+#contact a.contact_email {
+  font-size: 18px;
+  margin: 10px 0;
+  display: block; }
+
+#header_wrapper {
+  background: #5e57a6;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 10; }
+
+#header {
+  width: 900px;
+  margin: 0px auto;
+  position: relative; }
+
+#logo {
+  margin: 120px auto 15px;
+  width: 14em;
+  display: block; }
+
+.srl {
+  width: 5em;
+  position: fixed;
+  top: 17px;
+  left: 2.5em; }
+  .srl img {
+    width: 100%; }
+
+#nav {
+  width: 900px;
+  padding: 0;
+  text-transform: lowercase; }
+
+#nav ul {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  display: inline-block; }
+
+#nav li {
+  text-align: center;
+  display: inline-block;
+  width: auto;
+  font-family: din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased; }
+
+#nav li a {
+  font-size: 18px;
+  font-weight: normal;
+  display: block;
+  padding: 15px 20px;
+  border-bottom: none;
+  color: #FFF; }
+
+#nav li a:hover, #nav li.selected a {
+  background-color: #514b90; }
+
+.intro {
+  text-align: center;
+  margin: 1em 0 4em; }
+
+.app_section {
+  margin: 0 -8.5em;
+  margin-bottom: 3em; }
+  .app_section textarea {
+    width: 100%; }
+
+.input_col, .results_col {
+  width: 49%;
+  float: left; }
+
+.input_col {
+  margin-right: 2%; }
+
+.input_header {
+  text-align: center; }
+
+.input_section, input.square, .CodeMirror-wrap {
+  color: #46474b;
+  border: 2px solid #d9d9d9;
+  font-size: 14px;
+  padding: 0 16px 0 0;
+  outline: 0; }
+
+.input_section:focus, input.square:focus, .CodeMirror-wrap:focus {
+  border-color: #5e57a6; }
+
+form {
+  position: relative;
+  margin-bottom: 30px; }
+
+input.square {
+  margin: 30px auto;
+  width: 600px; }
+
+input.square:focus {
+  border-color: #5e57a6; }
+
+input.submit-button {
+  display: block;
+  margin: 20px auto;
+  border: none;
+  background: #5e57a6;
+  color: #FFF;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 5px 20px;
+  font-family: din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased; }
+
+input.submit-button:hover {
+  background: #46474b;
+  cursor: pointer; }
+
+.button {
+  display: inline-block;
+  background: #333;
+  padding: 0px 8px;
+  margin: 10px 0px;
+  color: #fff; }
+
+.button:hover {
+  background: #e0ba35; }
+
+iframe#tool_results {
+  margin: 30px 0;
+  display: none;
+  /*background:#FFF; border:2px solid #d9d9d9; padding:20px;*/ }
+
+#ajax-loader {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  display: none; }
+
+#load_error {
+  color: #f15a61;
+  font-size: 16px;
+  text-align: center;
+  display: none; }
+
+#iframe_nav {
+  text-align: center;
+  display: none; }
+
+.shareboxes {
+  position: fixed;
+  top: 15px;
+  right: 20px; }
+
+.sharebox {
+  float: right; }
+
+.g_plus {
+  margin-right: 25px; }
+
+#footer {
+  margin: 0 auto;
+  font-size: 0.9em;
+  width: 900px;
+  padding: 30px 0 40px 0;
+  text-align: center; }
+
+table {
+  font-size: 13px;
+  position: relative;
+  margin-top: 18px;
+  margin-bottom: 18px; }
+
+th, td {
+  line-height: 18px;
+  padding-top: 9px;
+  padding-bottom: 8px;
+  position: relative;
+  vertical-align: middle; }
+
+th {
+  border-top: solid 1px #ccc;
+  border-bottom: solid 1px #ccc;
+  font-weight: bold; }
+
+th:first-child, td:first-child {
+  padding-left: 3px; }
+
+th:last-child, td:last-child {
+  padding-right: 3px; }
+
+tr:nth-child(odd) td {
+  background: #f6f6f6; }
+
+.tabs {
+  padding: 30px 0; }
+
+.tab_content {
+  float: left;
+  width: 640px; }
+
+.tab_content > div {
+  display: none; }
+
+.tab_content > div:first-child {
+  display: block; }
+
+.tab_controls {
+  float: left;
+  width: 220px;
+  margin-right: 40px; }
+
+.tab_controls li {
+  font-size: 16px;
+  color: #5e57a6;
+  padding-bottom: 10px; }
+
+.tab_controls li:hover {
+  cursor: pointer;
+  color: #38afd1; }
+
+.tab_controls li.selected {
+  font-weight: 700; }
+
+/* Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+/* http://sonspring.com/journal/clearing-floats */
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0; }
+
+/* http://perishablepress.com/press/2008/02/05/lessons-learned-concerning-the-clearfix-css-hack */
+.clearfix:after {
+  clear: both;
+  content: ' ';
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  visibility: hidden;
+  width: 0;
+  height: 0; }
+
+.clearfix {
+  display: inline-block; }
+
+* html .clearfix {
+  height: 1%; }
+
+.clearfix {
+  display: block; }
