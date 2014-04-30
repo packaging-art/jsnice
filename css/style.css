@@ -273,7 +273,7 @@ iframe#tool_results {
 
 .shareboxes_low {
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
   text-align: center; }
   .shareboxes_low .sharebox {
     display: inline-block;
