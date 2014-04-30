@@ -1,5 +1,6 @@
 $brand_color: #5e57a6;
 $hover_color: #514b90;
+.content_wrapper {width: 96%; margin-right: auto; margin-left: auto; max-width: 1500px;}
 
 
 *, *:before, *:after {
@@ -25,7 +26,6 @@ h5 {font-size:22px; color:$brand_color; margin:0px 0 10px; text-align:center;}
 
 
 .container {width:100%; padding:0; }
-.content_wrapper {width: 96%; margin-right: auto; margin-left: auto; max-width: 1300px;}
 .js_nice_entry_field {}
 .post {width:780px;margin:30px auto 120px; padding:10px 0; border-top:2px solid #d9d9d9;}
 .post p {margin:14px 0 14px 0;}
