@@ -25,6 +25,8 @@ h5 {font-size:22px; color:$brand_color; margin:0px 0 10px; text-align:center;}
 
 
 .container {width:100%; padding:0; }
+.content_wrapper {width: 96%; margin-right: auto; margin-left: auto; max-width: 1300px;}
+.js_nice_entry_field {}
 .post {width:780px;margin:30px auto 120px; padding:10px 0; border-top:2px solid #d9d9d9;}
 .post p {margin:14px 0 14px 0;}
 .post p.highlight {text-align:center; font-size:18px; margin:30px 60px; color:#777; font-weight:normal; line-height:1.75em;}
@@ -42,26 +44,25 @@ h5 {font-size:22px; color:$brand_color; margin:0px 0 10px; text-align:center;}
 
 
 #header_wrapper{background:$brand_color; width:100%; top:0; left:0 ;position:fixed; z-index:10;}
-#header {width:900px;margin:0px auto;position:relative;}
-#logo {margin:80px auto 15px;width:14em;display:block;}
+#header {width:100%;margin:0px auto;position:relative;}
+#logo {margin:100px auto 10px;width:14em;display:block;}
 
 .srl {
 width: 5em;
-position: fixed;
+position: absolute;
 top: 17px;
-left: 2.5em;
+margin-left: 4%;
 	img {width: 100%;}
 }
 
-#nav {width:900px;padding:0;text-transform:lowercase;}
-#nav ul {width:100%; margin:0 auto; padding:0; text-align: center; display: inline-block;}
+#nav {width:100%;padding:0;text-transform:lowercase;}
+#nav ul {width:96%; margin:0 2%; padding:0; text-align: right; }
 #nav li {text-align:center;display:inline-block;width:auto; font-family:din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif; text-transform:uppercase; font-weight:400;  -webkit-font-smoothing: antialiased;}
 #nav li a {font-size:18px;font-weight:normal;display:block;padding:15px 20px;border-bottom:none;color:#FFF;}
 #nav li a:hover, #nav  li.selected a {background-color:$hover_color;}
 
 .intro {text-align: center; margin: 1em 0 4em;}
 .app_section {
-	 margin: 0 -16.5em;
 	 margin-bottom: 3em;
 	 textarea {width: 100%;}
 	}
@@ -69,8 +70,7 @@ left: 2.5em;
 		 h1 {margin-bottom: 50px;}
 
 }
-.input_col, .results_col {width: 49%; float:left;}
-.input_col {margin-right: 2%;}
+.input_col, .results_col {width: 100%; float:left;}
 
 .input_header {text-align: center;}
 .input_section, .CodeMirror-wrap {
@@ -94,11 +94,11 @@ form {position:relative; margin-bottom:30px;}
 		border-color: $brand_color;
 	}
 
-	input.submit-button {display:block; margin:20px auto; border:none; background:$brand_color; color:#FFF; font-size:18px; text-transform:uppercase; padding:5px 20px;  font-family:din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif; text-transform:uppercase; -webkit-font-smoothing: antialiased;}
-	input.submit-button:hover {background:#46474b; cursor:pointer;}
+	input.submit-button {display:block; margin:20px auto; border:none; border-radius:1px; background:$brand_color; color:#FFF; font-size:18px; text-transform:uppercase; padding:5px 20px;  font-family:din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif; text-transform:uppercase; -webkit-font-smoothing: antialiased; -webkit-appearance: none;}
+	input.submit-button:hover {background:$hover_color; cursor:pointer;}
 
 .button {display:inline-block; background:#333; padding:0px 8px; margin:10px 0px; color:#fff;}
-.button:hover  {background:#e0ba35;}
+.button:hover  {background:$hover_color;}
 
 iframe#tool_results {margin:30px 0; display:none; /*background:#FFF; border:2px solid #d9d9d9; padding:20px;*/}
 #ajax-loader {position:absolute; top:2px; right:10px; display:none;}
@@ -106,10 +106,14 @@ iframe#tool_results {margin:30px 0; display:none; /*background:#FFF; border:2px 
 #iframe_nav {text-align:center; display:none;}
 
 .shareboxes {position:fixed; top:15px; right:20px;}
+.shareboxes_low {margin: 0 auto; width: 90%; text-align: center;
+	.sharebox {
+	display:inline-block; float: inherit; margin: 0 1em;	}
+}
 .sharebox {float:right;}
 .g_plus {margin-right: 25px;}
 
-#footer {margin:0 auto; font-size:0.9em;width:900px;padding:30px 0 40px 0; text-align:center;}
+#footer {margin:0 auto; font-size:0.9em;width:100%;padding:30px 0 40px 0; text-align:center;}
 
 
 table {font-size:13px; position:relative; margin-top:18px; margin-bottom:18px;}
@@ -129,10 +133,23 @@ tr:nth-child(odd) td {background:#f6f6f6;}
 .tab_controls li:hover {cursor:pointer;color:#38afd1;}
 .tab_controls li.selected {font-weight:700;}
 
-@media (max-width: 1023px) {
 
+.small_screen, .medium_screen {display: block;}
+.large_screen, .very_large_screen {display: none;}
+
+@media only screen and (min-width: 42em) {
+.input_col, .results_col {width: 49.5%; float:left;}
+.input_col {margin-right: 1%;}
+
+.small_screen {display: none;}
+.large_screen {display: block;}
 }
+@media only screen and (min-width: 56em) {
+ .very_large_screen {display: block;}
+ #nav ul {width:100%; margin:0 auto; padding:0; text-align: center; }
+ .medium_screen {display:none;}
 
+ }
 
 
 /* Clear Floated Elements
@@ -140,36 +157,21 @@ tr:nth-child(odd) td {background:#f6f6f6;}
 
 /* http://sonspring.com/journal/clearing-floats */
 
-.clear {
-	clear: both;
-	display: block;
-	overflow: hidden;
-	visibility: hidden;
-	width: 0;
-	height: 0;
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
 }
-
-/* http://perishablepress.com/press/2008/02/05/lessons-learned-concerning-the-clearfix-css-hack */
 
 .clearfix:after {
-	clear: both;
-	content: ' ';
-	display: block;
-	font-size: 0;
-	line-height: 0;
-	visibility: hidden;
-	width: 0;
-	height: 0;
+    clear: both;
 }
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
 
 .clearfix {
-	display: inline-block;
-}
-
-* html .clearfix {
-	height: 1%;
-}
-
-.clearfix {
-	display: block;
+    *zoom: 1;
 }
