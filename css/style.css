@@ -1,5 +1,5 @@
 .content_wrapper {
-  width: 96%;
+  width: 94%;
   margin-right: auto;
   margin-left: auto;
   max-width: 1500px; }
@@ -28,7 +28,7 @@ a {
 a:hover {
   color: #38afd1; }
 
-h1, h2, h3, h5 {
+h1, h2, h3, h5, .tagline {
   font-family: din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 400;
@@ -138,10 +138,21 @@ h5 {
   display: block; }
 
 .srl {
-  width: 5em;
   position: absolute;
   top: 17px;
-  margin-left: 4%; }
+  margin-left: 3%; }
+  .srl .main_logo {
+    width: 5.2em;
+    display: inline-block;
+    float: left; }
+  .srl .tagline {
+    display: inline-block;
+    color: white;
+    white-space: nowrap;
+    float: left;
+    margin-left: 1em;
+    margin-top: .2em;
+    font-size: 17px; }
   .srl img {
     width: 100%; }
 
@@ -169,19 +180,28 @@ h5 {
   font-size: 18px;
   font-weight: normal;
   display: block;
-  padding: 15px 20px;
+  padding: 5px 18px;
+  line-height: 1;
+  border-radius: 2px;
+  margin: 14px 5px;
   border-bottom: none;
-  color: #FFF; }
+  color: #FFF;
+  border: 2px solid #5e57a6; }
 
 #nav li a:hover, #nav li.selected a {
-  background-color: #514b90; }
+  background-color: #514b90;
+  border: 2px solid white; }
+
+#nav li.trigger a {
+  background-color: #514b90;
+  border: 2px solid white; }
 
 .intro {
   text-align: center;
   margin: 1em 0 4em; }
 
 .app_section {
-  margin-bottom: 3em; }
+  margin-top: 7em; }
   .app_section textarea {
     width: 100%; }
 
@@ -190,10 +210,16 @@ h5 {
 
 .input_col, .results_col {
   width: 100%;
-  float: left; }
+  float: left;
+  margin-bottom: 1em; }
 
 .input_header {
-  text-align: center; }
+  text-align: left;
+  background: #e6e6e6; }
+  .input_header h5 {
+    padding: 13px 0 10px 30px;
+    text-align: left;
+    margin: 0; }
 
 .input_section, input.square, .CodeMirror-wrap {
   color: #46474b;
@@ -292,7 +318,7 @@ iframe#tool_results {
   margin: 0 auto;
   font-size: 0.9em;
   width: 100%;
-  padding: 30px 0 40px 0;
+  padding: 30px 0 10px 0;
   text-align: center; }
 
 table {
@@ -356,12 +382,14 @@ tr:nth-child(odd) td {
   display: block; }
 
 .large_screen, .very_large_screen {
-  display: none; }
+  display: none;
+  visibiility: hidden; }
 
 @media only screen and (min-width: 42em) {
   .input_col, .results_col {
     width: 49.5%;
-    float: left; }
+    float: left;
+    margin-bottom: 0; }
 
   .input_col {
     margin-right: 1%; }
@@ -374,12 +402,6 @@ tr:nth-child(odd) td {
 @media only screen and (min-width: 56em) {
   .very_large_screen {
     display: block; }
-
-  #nav ul {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0;
-    text-align: center; }
 
   .medium_screen {
     display: none; } }

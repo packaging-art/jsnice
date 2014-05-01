@@ -1,0 +1,25 @@
+/*
+Errno::ENOENT: No such file or directory - style.scss
+
+Backtrace:
+/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/plugin/compiler.rb:351:in `read'
+/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/plugin/compiler.rb:351:in `update_stylesheet'
+/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/plugin/compiler.rb:190:in `block in update_stylesheets'
+/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/plugin/compiler.rb:187:in `each'
+/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/plugin/compiler.rb:187:in `update_stylesheets'
+/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/plugin/compiler.rb:222:in `watch'
+/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/plugin.rb:108:in `method_missing'
+/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/exec.rb:509:in `watch_or_update'
+/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/exec.rb:346:in `process_result'
+/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/exec.rb:43:in `parse'
+/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/exec.rb:22:in `parse!'
+/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/bin/sass:13:in `<top (required)>'
+/Users/Dima/.rvm/gems/ruby-1.9.3-p327/bin/sass:19:in `load'
+/Users/Dima/.rvm/gems/ruby-1.9.3-p327/bin/sass:19:in `<main>'
+/Users/Dima/.rvm/gems/ruby-1.9.3-p327/bin/ruby_noexec_wrapper:14:in `eval'
+/Users/Dima/.rvm/gems/ruby-1.9.3-p327/bin/ruby_noexec_wrapper:14:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Errno::ENOENT: No such file or directory - style.scss"; }

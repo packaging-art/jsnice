@@ -22,33 +22,26 @@
 		<div id="header" class='content_wrapper'>
 			<div id="nav">
 				<div class='srl'>
-					<a href="http://www.srl.inf.ethz.ch" target="_blank"><img id="srl_logo" src="img/srl_logo.png"></a>
+					<span class="main_logo">
+					<a href="http://www.srl.inf.ethz.ch" target="_blank"><img id="srl_logo" src="img/js_nice-logo_knockout.png"></a>
+					</span>
+					<span class='tagline '>					<div class='large_screen'>
+Clean Up your Javascript Code</div>
+					</span>
 				</div>
 				<ul class="large_screen clearfix">
-					<li><a href="http://www.srl.inf.ethz.ch" target="_blank">Documentation</a></li><li><a href="http://www.srl.inf.ethz.ch" target="_blank">Team</a></li><li><a href="http://www.srl.inf.ethz.ch" target="_blank">Contact</a></li>
+					<li><a href="http://www.srl.inf.ethz.ch" target="_blank">about</a></li><li><a href=''>Settings</a></li><li class='trigger selected'><a href='' onclick="javascript:beautify()">Clean UP</a></li>
 				</ul>
 				<ul class="small_screen clearfix">
-					<li><a href="http://www.srl.inf.ethz.ch" target="_blank">Info</a></li>
+					<li><li><a href=''>Settings</a></li><li class='trigger selected'><a href='' onclick="javascript:beautify()">Clean UP</a></li>
 				</ul>
-				<div class="shareboxes very_large_screen">
-					<div class="sharebox">
-						<div class="fb-like"   data-show-faces="false" data-layout="button_count" data-width="90"></div>
-					</div>
-					<div class="sharebox g_plus">
-						<div class="g-plus" data-action="share" data-annotation="bubble"></div>
-					</div>
-					<div class="sharebox">
-						<a href="http://twitter.com/share" class="twitter-share-button"  data-text="EventRacer" data-via="">Tweet</a>
-					</div>
-				</div>
+
 			</div>
 		</div>
 	</div>
 
 <div class="container" >
 	<div class="content_wrapper" id="tool" >
-		<img id="logo" src="img/js_nice-logo.png">
-		<h1>Clean up your Javascript code</h1>
 		<div class='clearfix app_section'>
 			<div class='input_col'>
 				<div class='input_header'><h5>Enter JavaScript</h5></div>
@@ -58,17 +51,12 @@ function x() {
   return i;
 }
 					</textarea>
-							<div class='control_button small_screen'>
-				<input type="button" class="submit-button" onclick="javascript:beautify()" value="Clean Up">
-		</div>
+
 			</div>
 			<div class='results_col'>
-				<div class='input_header large_screen'><h5>Result</h5></div>
+				<div class='input_header '><h5>Result</h5></div>
 					<textarea rows="16" cols="120" id="outputjs" readonly="" class='input_section'></textarea>
 			</div>
-		</div>
-		<div class='control_button large_screen'>
-				<input type="button" class="submit-button" onclick="javascript:beautify()" value="Clean Up">
 		</div>
 	</div>
 </div>
@@ -77,7 +65,7 @@ function x() {
 	<p>&copy; JS NICE | jsnice.org | <a href="http://www.srl.inf.ethz.ch" target="_blank">Software Reliability Lab</a>, <a href="http://www.inf.ethz.ch" target="_blank">Computer Science Department</a>, <a href="http://www.ethz.ch/index_EN" target="_blank">ETH Zurich</a></p>
 </div>
 
-<div class="shareboxes_low medium_screen clearfix">
+<div class="shareboxes_low clearfix">
 	<div class="sharebox">
 		<div class="fb-like"   data-show-faces="false" data-layout="button_count" data-width="90"></div>
 	</div>
