@@ -162,8 +162,8 @@ h5 {
   text-transform: lowercase; }
 
 #nav ul {
-  width: 96%;
-  margin: 0 2%;
+  width: 94%;
+  margin: 0 auto;
   padding: 0;
   text-align: right; }
 
