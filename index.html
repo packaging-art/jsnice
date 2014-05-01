@@ -29,12 +29,10 @@
 Clean Up your Javascript Code</div>
 					</span>
 				</div>
-				<ul class="large_screen clearfix">
-					<li><a href="http://www.srl.inf.ethz.ch" target="_blank">about</a></li><li><a href=''>Settings</a></li><li class='trigger selected'><a href='' onclick="javascript:beautify()">Clean UP</a></li>
+				<ul class=" clearfix">
+					<li><a href="http://www.srl.inf.ethz.ch" target="_blank">about</a></li><li><a href=''>Settings</a></li>
 				</ul>
-				<ul class="small_screen clearfix">
-					<li><li><a href=''>Settings</a></li><li class='trigger selected'><a href='' onclick="javascript:beautify()">Clean UP</a></li>
-				</ul>
+
 
 			</div>
 		</div>
@@ -44,7 +42,7 @@ Clean Up your Javascript Code</div>
 	<div class="content_wrapper" id="tool" >
 		<div class='clearfix app_section'>
 			<div class='input_col'>
-				<div class='input_header'><h5>Enter JavaScript</h5></div>
+				<div class='input_header clearfix'><h5>Enter JavaScript</h5> <input type="submit" class="submit-button" name="submit" id="submit" value="Clean Up"></div>
 					<textarea rows="16" cols="120" id="inputjs" class='input_section'>
 function x() {
   var i = 0;
@@ -54,7 +52,7 @@ function x() {
 
 			</div>
 			<div class='results_col'>
-				<div class='input_header '><h5>Result</h5></div>
+				<div class='input_header clearfix'><h5>Result</h5> <input type="submit" class="settings" name="settings" id="settings" value="customize"></div>
 					<textarea rows="16" cols="120" id="outputjs" readonly="" class='input_section'></textarea>
 			</div>
 		</div>

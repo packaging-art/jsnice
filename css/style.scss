@@ -62,17 +62,8 @@ font-size: 17px}
 #nav {width:100%;padding:0;text-transform:lowercase;}
 #nav ul {width:94%; margin:0 auto; padding:0; text-align: right; }
 #nav li {text-align:center;display:inline-block;width:auto; font-family:din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif; text-transform:uppercase; font-weight:400;  -webkit-font-smoothing: antialiased;}
-#nav li a {font-size:18px;font-weight:normal;display:block;padding: 5px 18px;
-line-height: 1;
-border-radius: 2px;
-margin: 14px 5px;
-border-bottom:none;color:#FFF;
-border: 2px solid $brand_color;}
-#nav li a:hover, #nav  li.selected a {background-color:$hover_color; border: 2px solid white;}
-#nav  li.trigger a
-{background-color: #514b90;
-border: 2px solid white;
-}
+#nav li a {font-size:18px;font-weight:normal;display:block;padding:20px 20px;border-bottom:none;color:#FFF;}
+#nav li a:hover, #nav  li.selected a {background-color:$hover_color;}
 
 .intro {text-align: center; margin: 1em 0 4em;}
 .app_section {
@@ -87,7 +78,7 @@ border: 2px solid white;
 
 .input_header {text-align: left;
 	background: hsl(0,0%,90%);
-	h5 {padding: 13px 0 10px 30px; text-align: left; margin: 0;}
+	h5 {padding: 13px 0 10px 30px; text-align: left; margin: 0; display: inline-block; float: left;}
 }
 
 .input_section, .CodeMirror-wrap {
@@ -111,8 +102,12 @@ form {position:relative; margin-bottom:30px;}
 		border-color: $brand_color;
 	}
 
-	input.submit-button {display:block; margin:20px auto; border:none; border-radius:1px; background:$brand_color; color:#FFF; font-size:18px; text-transform:uppercase; padding:5px 20px;  font-family:din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif; text-transform:uppercase; -webkit-font-smoothing: antialiased; -webkit-appearance: none;}
-	input.submit-button:hover {background:$hover_color; cursor:pointer;}
+	input.submit-button, input.settings {display:block; margin:20px auto; border:none; border-radius:1px; background:$brand_color; color:#FFF; font-size:18px; text-transform:uppercase; padding:5px 20px;  font-family:din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif; text-transform:uppercase; -webkit-font-smoothing: antialiased; -webkit-appearance: none;
+float: right;
+display: inline-block;
+margin: 9px 10px 0 10px;
+}
+	input.submit-button:hover, input.settings:hover {background:$hover_color; cursor:pointer;}
 
 .button {display:inline-block; background:#333; padding:0px 8px; margin:10px 0px; color:#fff;}
 .button:hover  {background:$hover_color;}

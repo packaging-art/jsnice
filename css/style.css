@@ -180,21 +180,12 @@ h5 {
   font-size: 18px;
   font-weight: normal;
   display: block;
-  padding: 5px 18px;
-  line-height: 1;
-  border-radius: 2px;
-  margin: 14px 5px;
+  padding: 20px 20px;
   border-bottom: none;
-  color: #FFF;
-  border: 2px solid #5e57a6; }
+  color: #FFF; }
 
 #nav li a:hover, #nav li.selected a {
-  background-color: #514b90;
-  border: 2px solid white; }
-
-#nav li.trigger a {
-  background-color: #514b90;
-  border: 2px solid white; }
+  background-color: #514b90; }
 
 .intro {
   text-align: center;
@@ -219,7 +210,9 @@ h5 {
   .input_header h5 {
     padding: 13px 0 10px 30px;
     text-align: left;
-    margin: 0; }
+    margin: 0;
+    display: inline-block;
+    float: left; }
 
 .input_section, input.square, .CodeMirror-wrap {
   color: #46474b;
@@ -242,7 +235,7 @@ input.square {
 input.square:focus {
   border-color: #5e57a6; }
 
-input.submit-button {
+input.submit-button, input.settings {
   display: block;
   margin: 20px auto;
   border: none;
@@ -255,9 +248,12 @@ input.submit-button {
   font-family: din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+  float: right;
+  display: inline-block;
+  margin: 9px 10px 0 10px; }
 
-input.submit-button:hover {
+input.submit-button:hover, input.settings:hover {
   background: #514b90;
   cursor: pointer; }
 
