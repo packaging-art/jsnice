@@ -295,10 +295,9 @@ iframe#tool_results {
 
 .shareboxes_low {
   margin: 0 auto;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 1em;
-  height: 2em; }
+  text-align: left;
+  float: left;
+  margin-top: 1em; }
   .shareboxes_low .sharebox {
     display: inline-block;
     float: inherit;
@@ -313,9 +312,8 @@ iframe#tool_results {
 #footer {
   margin: 0 auto;
   font-size: 0.9em;
-  width: 100%;
   padding: 30px 0 10px 0;
-  text-align: center; }
+  text-align: left; }
 
 table {
   font-size: 13px;
@@ -394,7 +392,12 @@ tr:nth-child(odd) td {
     display: none; }
 
   .large_screen {
-    display: block; } }
+    display: block; }
+
+  .shareboxes_low {
+    text-align: right;
+    float: right;
+    margin-top: -1.8em; } }
 @media only screen and (min-width: 56em) {
   .very_large_screen {
     display: block; }

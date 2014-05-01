@@ -1,81 +1,48 @@
+/*--------------------------------------------------------------------
+ * jQuery pixel/em conversion plugins: toEm() and toPx()
+ * by Scott Jehl (scott@filamentgroup.com), http://www.filamentgroup.com
+ * Copyright (c) Filament Group
+ * Dual licensed under the MIT (filamentgroup.com/examples/mit-license.txt) or GPL (filamentgroup.com/examples/gpl-license.txt) licenses.
+ * Article: http://www.filamentgroup.com/lab/update_jquery_plugin_for_retaining_scalable_interfaces_with_pixel_to_em_con/
+ * Options:
+        scope: string or jQuery selector for font-size scoping
+ * Usage Example: $(myPixelValue).toEm(); or $(myEmValue).toPx();
+--------------------------------------------------------------------*/
 
-jQuery(document).ready(function($){
+$.fn.toEm = function(settings){
+    settings = jQuery.extend({
+        scope: 'body'
+    }, settings);
+    var that = parseInt(this[0],10),
+        scopeTest = jQuery('<div style="display: none; font-size: 1em; margin: 0; padding:0; height: auto; line-height: 1; border:0;">&nbsp;</div>').appendTo(settings.scope),
+        scopeVal = scopeTest.height();
+    scopeTest.remove();
+    return (that / scopeVal).toFixed(8);
+};
 
-	$('#nav ul').onePageNav({
-	    currentClass: 'selected',
-		scrollOffset: 50,
-		scrollThreshold: 0.5,
-		changeHash: false,
-		scrollSpeed: 750,
-		easing: 'swing'
-	});
 
-	$('#iframe_nav a#list').click(function(){
-		$('iframe#tool_results').attr('src', race_url);
-		return false;
-		
-	});
+$.fn.toPx = function(settings){
+    settings = jQuery.extend({
+        scope: 'body'
+    }, settings);
+    var that = parseFloat(this[0]),
+        scopeTest = jQuery('<div style="display: none; font-size: 1em; margin: 0; padding:0; height: auto; line-height: 1; border:0;">&nbsp;</div>').appendTo(settings.scope),
+        scopeVal = scopeTest.height();
+    scopeTest.remove();
+    return Math.round(that * scopeVal);
+};
 
-	var $input = $("input#web_address");
-	var oldVal = $input.val();
-    $input.focus().val('').val(oldVal);
-	
-	var race_url = "";
-	
-	$('form.searchform').submit(function(){
-		
-		var tool_url =  $(this).attr('action');
-		var submitted_url = $(this).find('input#web_address').val();
-		race_url = tool_url+submitted_url;
-		
-		if(submitted_url=="http://"){
-			alert('Please enter a full URL');
-		}else {
-			
-			//TODO verify http:// in submitted url
-			
-			$('#load_error').hide();
-			$('#ajax-loader').show();
-			$('iframe#tool_results').attr('src', race_url);
-			$('iframe#tool_results').load(function() { $('#ajax-loader').hide(); $(this).slideDown(); });
-			$('iframe#tool_results').error(function() { $('#ajax-loader').hide(); $('#load_error').slideDown(); });
+function viewport() {
+    var height = (window.innerHeight ? window.innerHeight : $w.height());
+    var full = height - $(15).toPx({});
+    $(".CodeMirror").css('height',full);
+}
 
-		}
-			
-		return false;
-	});
-	
-	
-	$('.tabs').tabs();
+$(document).ready(function() {
+    viewport();
+
+    $(window).resize(function() {
+        viewport();
+    });
 });
 
-// sticky nav
-// ---------------
-(function($) {
-    $.fn.tabs = function() {
-        
-	 var tabs = $(this);
-	 var tab_controls  = tabs.find('.tab_controls li');
-
-
-	tab_controls.each(function(id,v){
-
-		 $(v).click((function(id) {
-		      return function() {
-				$('.tab_content div').hide();
-				$('.tab_content div:eq('+id+')').show();
-				tab_controls.removeClass('selected');
-				$(this).addClass('selected');
-		      };
-		  }(id)));
-		
-	});
-	
-
-
-
-
-	
-
-  }
-})(jQuery);
