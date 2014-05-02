@@ -38,7 +38,6 @@ function viewport() {
     var height = (window.innerHeight ? window.innerHeight : $w.height());
     var full = height - $(15).toPx({});
     $(".CodeMirror").css('height',full);
-    $(".intro_slide").css('height',full);
 
 }
 
@@ -53,7 +52,7 @@ $(document).ready(function() {
 //Remove intro_slide
 
 $( "#submit" ).click(function() {
-  $( "#intro_area" ).addClass( "hidden" );
+  $( "#intro_area_overlay" ).addClass( "hidden" );
 });
 
 //Social_Links

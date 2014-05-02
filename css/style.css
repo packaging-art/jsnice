@@ -231,18 +231,35 @@ h5 {
 .results_col {
   position: relative; }
 
-.intro_area {
-  background: #dedced;
+.intro_area_overlay {
   z-index: 10000;
   position: absolute;
   top: 0;
-  width: 100%; }
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.intro_area {
+  background: rgba(212, 212, 212, 0.5);
+  z-index: 10000;
+  position: absolute;
+  top: 4.5em;
+  bottom: 1.5em;
+  left: 1em;
+  right: 1em;
+  overflow: hidden; }
+  .intro_area .input_header {
+    background: rgba(212, 212, 212, 0.5); }
+  .intro_area h5 {
+    text-align: center;
+    padding-left: 0;
+    width: 100%; }
 
 .intro_slide {
-  oveflow: hidden;
   overflow-y: scroll;
-  padding: 4px 20px 0;
-  line-height: 1.4; }
+  padding: 20px 20px 0;
+  line-height: 1.4;
+  height: 100%; }
 
 form {
   position: relative;
@@ -425,6 +442,12 @@ tr:nth-child(odd) td {
   input.submit-button, input.settings {
     font-size: 18px; } }
 @media only screen and (min-width: 56em) {
+  .intro_area {
+    top: 5em;
+    bottom: 2em;
+    left: 4em;
+    right: 2em; }
+
   .very_large_screen {
     display: block; }
 

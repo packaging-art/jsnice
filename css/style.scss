@@ -1,6 +1,7 @@
 $brand_color: #5e57a6;
 $hover_color: #514b90;
 $text_field_secondary_color: #dedced;
+$neutral_gray: hsla(0,0%,83%, .5);
 .content_wrapper {width: 94%; margin-right: auto; margin-left: auto; max-width: 1500px;}
 
 
@@ -98,20 +99,37 @@ font-weight: 400;
 	border-color: $brand_color;
 }
 .results_col {position: relative;}
-.intro_area {
-	background: $text_field_secondary_color;
+.intro_area_overlay {
 	z-index:10000;
 	position: absolute;
 	top:0;
-	width: 100%;
-
+	bottom:0;
+	left:0;
+	right: 0;
+}
+.intro_area {
+	background: $neutral_gray;
+	z-index:10000;
+	position: absolute;
+	top:4.5em;
+	bottom:1.5em;
+	left:1em;
+	right:1em;
+		overflow: hidden;
+	.input_header {
+	background: $neutral_gray;
+	}
+	h5 {	text-align: center;
+		padding-left: 0;
+		width: 100%;
+}
 }
 
 .intro_slide {
-	oveflow: hidden;
 	overflow-y: scroll;
-	padding: 4px 20px 0;
+	padding: 20px 20px 0;
 	line-height: 1.4;
+	height: 100%;
 }
 
 form {position:relative; margin-bottom:30px;}
@@ -194,6 +212,14 @@ input.submit-button, input.settings {font-size:18px; }
 }
 
 @media only screen and (min-width: 56em) {
+
+.intro_area {
+
+	top:5em;
+	bottom:2em;
+	left:4em;
+	right:2em;
+}
  .very_large_screen {display: block;}
  .medium_screen {display:none;}
  }
