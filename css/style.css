@@ -1,43 +1,451 @@
+.content_wrapper {
+  width: 94%;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1500px; }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  height: 100%;
+  overflow-y: scroll; }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #47484c;
+  font-weight: normal;
+  line-height: 1.7em;
+  background: #faf9f7; }
+
+a {
+  text-decoration: none;
+  color: #5e57a6; }
+
+a:hover {
+  color: #38afd1; }
+
+h1, h2, h3, h5, .tagline {
+  font-family: din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased; }
+
+h1 {
+  font-size: 18px;
+  color: #5e57a6;
+  margin-top: 0;
+  margin-bottom: 80px;
+  text-align: center; }
+
+h2 {
+  font-size: 36px;
+  color: #47484c;
+  margin: 20px 0;
+  text-align: center; }
+
+h3 {
+  font-size: 24px;
+  color: #5e57a6;
+  margin: 30px 0;
+  text-align: center; }
+
+h4 {
+  font-size: 14px;
+  color: #47484c;
+  margin-bottom: -10px;
+  font-weight: bold; }
+
+h5 {
+  font-size: 22px;
+  color: #5e57a6;
+  margin: 0px 0 10px;
+  text-align: center; }
+
+.container {
+  width: 100%;
+  padding: 0; }
+
+.post {
+  width: 780px;
+  margin: 30px auto 120px;
+  padding: 10px 0;
+  border-top: 2px solid #d9d9d9; }
+
+.post p {
+  margin: 14px 0 14px 0; }
+
+.post p.highlight {
+  text-align: center;
+  font-size: 18px;
+  margin: 30px 60px;
+  color: #777;
+  font-weight: normal;
+  line-height: 1.75em; }
+
+.post .two_col1 {
+  float: left;
+  width: 360px;
+  padding-right: 28px;
+  padding-top: 10px; }
+
+.post .two_col2 {
+  float: left;
+  width: 360px;
+  padding-left: 29px;
+  padding-top: 10px; }
+
+.post .three_cols {
+  padding-top: 20px; }
+
+.post .three_cols > div {
+  float: left;
+  margin: 0 40px;
+  width: 180px;
+  text-align: center; }
+
+.post .three_cols img {
+  margin: 0 auto; }
+
+#tool.post {
+  border: 0;
+  margin-bottom: 180px; }
+
+#contact a.contact_email {
+  font-size: 18px;
+  margin: 10px 0;
+  display: block; }
+
+#header_wrapper {
+  background: #5e57a6;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 100000; }
+
+#header {
+  width: 100%;
+  margin: 0px auto;
+  position: relative; }
+
+#logo {
+  margin: 100px auto 10px;
+  width: 14em;
+  display: block; }
+
+.srl {
+  position: absolute;
+  top: 17px;
+  margin-left: 3.5%; }
+  .srl .main_logo {
+    width: 5.2em;
+    display: inline-block;
+    float: left; }
+  .srl .tagline {
+    display: inline-block;
+    color: white;
+    white-space: nowrap;
+    float: left;
+    margin-left: .5em;
+    margin-top: .2em;
+    font-size: 17px; }
+  .srl img {
+    width: 100%; }
+
+#nav {
+  width: 100%;
+  padding: 0;
+  text-transform: lowercase; }
+
+#nav ul {
+  width: 94%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: right; }
+
+#nav li {
+  text-align: center;
+  display: inline-block;
+  width: auto;
+  font-family: din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased; }
+
+#nav li a {
+  font-size: 18px;
+  font-weight: normal;
+  display: block;
+  padding: 20px 20px;
+  border-bottom: none;
+  color: #FFF; }
+
+#nav li a:hover, #nav li.selected a {
+  background-color: #514b90; }
+
+.intro {
+  text-align: center;
+  margin: 1em 0 4em; }
+
+.app_section {
+  margin-top: 7em; }
+  .app_section textarea {
+    width: 100%; }
+
+#tool h1 {
+  margin-bottom: 50px; }
+
+.input_col, .results_col {
+  width: 100%;
+  float: left;
+  margin-bottom: 1em; }
+
+.input_header {
+  text-align: left;
+  background: #e6e6e6; }
+  .input_header h5 {
+    padding: 13px 0 10px 20px;
+    text-align: left;
+    margin: 0;
+    display: inline-block;
+    float: left; }
+
+.input_section, input.square, .CodeMirror-wrap {
+  color: #46474b;
+  border: 2px solid #d9d9d9;
+  font-size: 14px;
+  padding: 0 16px 0 0;
+  outline: 0; }
+
+.input_section:focus, input.square:focus, .CodeMirror-wrap:focus {
+  border-color: #5e57a6; }
+
+.results_col {
+  position: relative; }
+
+.intro_area {
+  background: #e6e6e6;
+  z-index: 10000;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+
+.intro_slide {
+  oveflow: hidden;
+  overflow-y: scroll;
+  padding: 4px 20px 0;
+  line-height: 1.4; }
+
+form {
+  position: relative;
+  margin-bottom: 30px; }
+
+input.square {
+  margin: 30px auto;
+  width: 600px; }
+
+input.square:focus {
+  border-color: #5e57a6; }
+
+input.submit-button, input.settings {
+  display: block;
+  margin: 20px auto;
+  border: none;
+  border-radius: 1px;
+  background: #5e57a6;
+  color: #FFF;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 5px 20px;
+  font-family: din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  -webkit-appearance: none;
+  float: right;
+  display: inline-block;
+  margin: 9px 10px 0 10px; }
+
+input.submit-button:hover, input.settings:hover {
+  background: #514b90;
+  cursor: pointer; }
+
+.button {
+  display: inline-block;
+  background: #333;
+  padding: 0px 8px;
+  margin: 10px 0px;
+  color: #fff; }
+
+.button:hover {
+  background: #514b90; }
+
+iframe#tool_results {
+  margin: 30px 0;
+  display: none;
+  /*background:#FFF; border:2px solid #d9d9d9; padding:20px;*/ }
+
+#ajax-loader {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  display: none; }
+
+#load_error {
+  color: #f15a61;
+  font-size: 16px;
+  text-align: center;
+  display: none; }
+
+#iframe_nav {
+  text-align: center;
+  display: none; }
+
+.shareboxes {
+  position: fixed;
+  top: 15px;
+  right: 20px; }
+
+.shareboxes_low {
+  margin: 0 auto;
+  text-align: left;
+  float: left;
+  margin-top: 1em; }
+  .shareboxes_low .sharebox {
+    display: inline-block;
+    float: inherit;
+    margin: 0 1em; }
+
+.sharebox {
+  float: right; }
+
+.g_plus {
+  margin-right: 25px; }
+
+#footer {
+  margin: 0 auto;
+  font-size: 0.9em;
+  padding: 30px 0 10px 0;
+  text-align: left; }
+
+table {
+  font-size: 13px;
+  position: relative;
+  margin-top: 18px;
+  margin-bottom: 18px; }
+
+th, td {
+  line-height: 18px;
+  padding-top: 9px;
+  padding-bottom: 8px;
+  position: relative;
+  vertical-align: middle; }
+
+th {
+  border-top: solid 1px #ccc;
+  border-bottom: solid 1px #ccc;
+  font-weight: bold; }
+
+th:first-child, td:first-child {
+  padding-left: 3px; }
+
+th:last-child, td:last-child {
+  padding-right: 3px; }
+
+tr:nth-child(odd) td {
+  background: #f6f6f6; }
+
+.tabs {
+  padding: 30px 0; }
+
+.tab_content {
+  float: left;
+  width: 640px; }
+
+.tab_content > div {
+  display: none; }
+
+.tab_content > div:first-child {
+  display: block; }
+
+.tab_controls {
+  float: left;
+  width: 220px;
+  margin-right: 40px; }
+
+.tab_controls li {
+  font-size: 16px;
+  color: #5e57a6;
+  padding-bottom: 10px; }
+
+.tab_controls li:hover {
+  cursor: pointer;
+  color: #38afd1; }
+
+.tab_controls li.selected {
+  font-weight: 700; }
+
+.small_screen, .medium_screen {
+  display: block; }
+
+.large_screen, .very_large_screen, .iphone_landscape {
+  display: none;
+  visibiility: hidden; }
+
+@media only screen and (min-width: 32em) {
+  .iphone_landscape {
+    display: block; } }
+@media only screen and (min-width: 42em) {
+  .input_col, .results_col {
+    width: 49.5%;
+    float: left;
+    margin-bottom: 0; }
+
+  .input_col {
+    margin-right: 1%; }
+
+  .small_screen {
+    display: none; }
+
+  .large_screen {
+    display: block; }
+
+  .shareboxes_low {
+    text-align: right;
+    float: right;
+    margin-top: -1.8em; }
+
+  input.submit-button, input.settings {
+    font-size: 18px; } }
+@media only screen and (min-width: 56em) {
+  .very_large_screen {
+    display: block; }
+
+  .medium_screen {
+    display: none; } }
+/* Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+/* http://sonspring.com/journal/clearing-floats */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.clearfix:after {
+  clear: both; }
+
 /*
-Syntax error: Invalid CSS after "$": expected identifier, was ".fn.toEm = func..."
-        on line 12 of style.scss
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+  *zoom: 1; }
 
-7:  * Options:
-8:         scope: string or jQuery selector for font-size scoping
-9:  * Usage Example: $(myPixelValue).toEm(); or $(myEmValue).toPx();
-10: --------------------------------------------------------------------*\/
-11: 
-12: $.fn.toEm = function(settings){
-13:     settings = jQuery.extend({
-14:         scope: 'body'
-15:     }, settings);
-16:     var that = parseInt(this[0],10),
-17:         scopeTest = jQuery('<div style="display: none; font-size: 1em; margin: 0; padding:0; height: auto; line-height: 1; border:0;">&nbsp;</div>').appendTo(settings.scope),
-
-Backtrace:
-style.scss:12
-/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/scss/parser.rb:1308:in `expected'
-/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/scss/parser.rb:1242:in `expected'
-/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/scss/parser.rb:1237:in `tok!'
-/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/scss/parser.rb:597:in `variable'
-/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/scss/parser.rb:654:in `block_child'
-/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/scss/parser.rb:644:in `block_contents'
-/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/scss/parser.rb:116:in `stylesheet'
-/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/scss/parser.rb:41:in `parse'
-/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/engine.rb:409:in `_to_tree'
-/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/engine.rb:274:in `render'
-/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/plugin/compiler.rb:360:in `update_stylesheet'
-/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/plugin/compiler.rb:190:in `block in update_stylesheets'
-/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/plugin/compiler.rb:187:in `each'
-/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/plugin/compiler.rb:187:in `update_stylesheets'
-/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.3.0.rc.5/lib/sass/plugin/compiler.rb:275:in `block in watch'
-/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/listen-2.4.1/lib/listen/listener.rb:151:in `call'
-/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/listen-2.4.1/lib/listen/listener.rb:151:in `block in _wait_for_changes'
-/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/listen-2.4.1/lib/listen/listener.rb:146:in `loop'
-/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/listen-2.4.1/lib/listen/listener.rb:146:in `_wait_for_changes'
-/Users/Dima/.rvm/gems/ruby-1.9.3-p327/gems/listen-2.4.1/lib/listen/listener.rb:44:in `block in start'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"$\": expected identifier, was \".fn.toEm = func...\"\A         on line 12 of style.scss\A \A 7:  * Options:\A 8:         scope: string or jQuery selector for font-size scoping\A 9:  * Usage Example: $(myPixelValue).toEm(); or $(myEmValue).toPx();\A 10: --------------------------------------------------------------------*/\A 11: \A 12: $.fn.toEm = function(settings){\A 13:     settings = jQuery.extend({\A 14:         scope: 'body'\A 15:     }, settings);\A 16:     var that = parseInt(this[0],10),\A 17:         scopeTest = jQuery('<div style=\"display: none; font-size: 1em; margin: 0; padding:0; height: auto; line-height: 1; border:0;\">&nbsp;</div>').appendTo(settings.scope),"; }
+.hidden {
+  display: none !important;
+  visibility: hidden; }
