@@ -1,3 +1,18 @@
+.copy, body {
+  font-family: "ff-dagny-web-pro",sans-serif;
+  font-style: normal;
+  font-weight: 400; }
+
+.heading, h1, h2, h3, h5, .tagline, #nav li, input.submit-button, input.settings {
+  font-family: din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 400; }
+
+.code_block, .input_section, input.square, .CodeMirror-wrap {
+  font-family: "source-code-pro",sans-serif;
+  font-style: normal;
+  font-weight: 400; }
+
 .content_wrapper {
   width: 94%;
   margin-right: auto;
@@ -14,9 +29,6 @@ html {
   overflow-y: scroll; }
 
 body {
-  font-family: "ff-dagny-web-pro",sans-serif;
-  font-style: normal;
-  font-weight: 400;
   font-size: 15px;
   color: #47484c;
   line-height: 1.7em;
@@ -30,9 +42,6 @@ a:hover {
   color: #38afd1; }
 
 h1, h2, h3, h5, .tagline {
-  font-family: din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 400;
   -webkit-font-smoothing: antialiased; }
 
 h1 {
@@ -172,9 +181,6 @@ h5 {
   text-align: center;
   display: inline-block;
   width: auto;
-  font-family: din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 400;
   -webkit-font-smoothing: antialiased; }
 
 #nav li a {
@@ -220,10 +226,7 @@ h5 {
   border: 2px solid #d9d9d9;
   font-size: 14px;
   padding: 0 16px 0 0;
-  outline: 0;
-  font-family: "source-code-pro",sans-serif;
-  font-style: normal;
-  font-weight: 400; }
+  outline: 0; }
 
 .input_section:focus, input.square:focus, .CodeMirror-wrap:focus {
   border-color: #5e57a6; }
@@ -282,8 +285,6 @@ input.submit-button, input.settings {
   font-size: 15px;
   text-transform: uppercase;
   padding: 5px 20px;
-  font-family: din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
   -webkit-appearance: none;
   float: right;

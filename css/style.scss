@@ -2,6 +2,23 @@ $brand_color: #5e57a6;
 $hover_color: #514b90;
 $text_field_secondary_color: #dedced;
 $neutral_gray: hsla(0,0%,83%, .5);
+
+.copy {
+	font-family: "ff-dagny-web-pro",sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+.heading {
+	font-family:din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform:uppercase;
+	font-weight:400;
+}
+.code_block {
+	font-family: "source-code-pro",sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+
 .content_wrapper {width: 94%; margin-right: auto; margin-left: auto; max-width: 1500px;}
 
 
@@ -13,15 +30,13 @@ $neutral_gray: hsla(0,0%,83%, .5);
 
 html {height: 100%;overflow-y: scroll;}
 
-body {font-family: "ff-dagny-web-pro",sans-serif;
-font-style: normal;
-font-weight: 400; font-size:15px; color:#47484c; line-height:1.7em; background:#faf9f7;}
+body {@extend .copy; font-size:15px; color:#47484c; line-height:1.7em; background:#faf9f7;}
 
 a {text-decoration:none;color:$brand_color;}
 
 a:hover {color:#38afd1;}
 
-h1,h2,h3, h5, .tagline {font-family:din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif; text-transform:uppercase; font-weight:400;  -webkit-font-smoothing: antialiased;}
+h1,h2,h3, h5, .tagline { @extend .heading; -webkit-font-smoothing: antialiased;}
 h1 {font-size:18px; color:$brand_color; margin-top:0; margin-bottom:80px; text-align:center;}
 h2 {font-size:36px; color:#47484c; margin:20px 0;  text-align:center;}
 h3 {font-size:24px; color:$brand_color; margin:30px 0; text-align:center;}
@@ -65,7 +80,7 @@ font-size: 17px}
 
 #nav {width:100%;padding:0;text-transform:lowercase;}
 #nav ul {width:94%; margin:0 auto; padding:0; text-align: right; }
-#nav li {text-align:center;display:inline-block;width:auto; font-family:din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif; text-transform:uppercase; font-weight:400;  -webkit-font-smoothing: antialiased;}
+#nav li {text-align:center;display:inline-block;width:auto; @extend .heading; -webkit-font-smoothing: antialiased;}
 #nav li a {font-size:18px;font-weight:normal;display:block;padding:19px 20px;border-bottom:none;color:#FFF;}
 #nav li a:hover, #nav  li.selected a {background-color:$hover_color;}
 
@@ -91,9 +106,7 @@ font-size: 17px}
 		font-size: 14px;
 		padding: 0 16px 0 0;
 		outline: 0;
-font-family: "source-code-pro",sans-serif;
-font-style: normal;
-font-weight: 400;
+		@extend .code_block;
 }
 .input_section:focus, .CodeMirror-wrap:focus {
 	border-color: $brand_color;
@@ -142,7 +155,7 @@ form {position:relative; margin-bottom:30px;}
 		border-color: $brand_color;
 	}
 
-	input.submit-button, input.settings {display:block; margin:20px auto; border:none; border-radius:1px; background:$brand_color; color:#FFF; font-size:15px; text-transform:uppercase; padding:5px 20px;  font-family:din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif; text-transform:uppercase; -webkit-font-smoothing: antialiased; -webkit-appearance: none;
+	input.submit-button, input.settings {display:block; margin:20px auto; border:none; border-radius:1px; background:$brand_color; color:#FFF; font-size:15px; text-transform:uppercase; padding:5px 20px; @extend .heading; -webkit-font-smoothing: antialiased; -webkit-appearance: none;
 float: right;
 display: inline-block;
 margin: 9px 10px 0 10px;
