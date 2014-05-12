@@ -169,6 +169,9 @@ h5 {
   .srl img {
     width: 100%; }
 
+.wf-inactive .srl {
+  width: 30em; }
+
 #nav {
   width: 100%;
   padding: 0;
