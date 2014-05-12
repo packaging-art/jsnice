@@ -34,6 +34,9 @@ body {
   line-height: 1.7em;
   background: #faf9f7; }
 
+.wf-loading body {
+  visibiility: hidden; }
+
 a {
   text-decoration: none;
   color: #5e57a6; }
