@@ -301,6 +301,9 @@ input.submit-button:hover, input.settings:hover {
   background: #514b90;
   cursor: pointer; }
 
+input.settings {
+  line-height: 1.2; }
+
 .button {
   display: inline-block;
   background: #333;

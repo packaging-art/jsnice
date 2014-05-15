@@ -167,6 +167,7 @@ margin: 9px 10px 0 10px;
 }
 	input.submit-button:hover, input.settings:hover {background:$hover_color; cursor:pointer;}
 
+input.settings {line-height: 1.2;}
 .button {display:inline-block; background:#333; padding:0px 8px; margin:10px 0px; color:#fff;}
 .button:hover  {background:$hover_color;}
 
