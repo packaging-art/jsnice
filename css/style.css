@@ -34,7 +34,7 @@ body {
   line-height: 1.7em;
   background: #faf9f7; }
 
-.wf-loading body {
+.wf-loading .async {
   visibiility: hidden; }
 
 a {
@@ -290,19 +290,29 @@ input.submit-button, input.settings {
   color: #FFF;
   font-size: 15px;
   text-transform: uppercase;
-  padding: 5px 20px;
+  padding: 5px 13px;
   -webkit-font-smoothing: antialiased;
   -webkit-appearance: none;
   float: right;
   display: inline-block;
-  margin: 9px 10px 0 10px; }
+  margin: 11px 10px 0 8px; }
 
 input.submit-button:hover, input.settings:hover {
   background: #514b90;
   cursor: pointer; }
 
-input.settings {
-  line-height: 1.2; }
+input.settings, input.settings:hover {
+  line-height: 1.2;
+  width: 32px;
+  height: 28px;
+  background-image: url(../img/cogs.png);
+  background-repeat: no-repeat;
+  background-color: #5e57a6;
+  background-position: top left;
+  background-size: cover;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0; }
 
 .button {
   display: inline-block;
@@ -311,8 +321,8 @@ input.settings {
   margin: 10px 0px;
   color: #fff; }
 
-.button:hover {
-  background: #514b90; }
+.button:hover, input.settings:hover {
+  background-color: #514b90; }
 
 iframe#tool_results {
   margin: 30px 0;
@@ -419,6 +429,20 @@ tr:nth-child(odd) td {
 .tab_controls li.selected {
   font-weight: 700; }
 
+.dropdown .dropdown-menu, .dropdown .dropdown-panel {
+  border-radius: 2px;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+  padding: 20px 5px 13px; }
+  .dropdown .dropdown-menu li + li, .dropdown .dropdown-panel li + li {
+    margin-top: .25em; }
+  .dropdown .dropdown-menu input, .dropdown .dropdown-panel input {
+    display: inline-block;
+    margin-right: .5em; }
+
+.dropdown .dropdown-menu .dropdown-divider {
+  border-top: solid 1px rgba(212, 212, 212, 0.5);
+  margin: 13px 0; }
+
 .small_screen, .medium_screen {
   display: block; }
 
@@ -430,6 +454,28 @@ tr:nth-child(odd) td {
   .iphone_landscape {
     display: block; } }
 @media only screen and (min-width: 42em) {
+  .small_screen {
+    display: none; }
+
+  .large_screen {
+    display: block; }
+
+  .large_screen.title {
+    display: inline-block; }
+
+  .shareboxes_low {
+    text-align: right;
+    float: right;
+    margin-top: -1.8em; }
+
+  input.submit-button, input.settings {
+    font-size: 18px;
+    margin-top: 9px; }
+
+  input.settings, input.settings:hover {
+    width: 35px;
+    height: 31px; } }
+@media only screen and (min-width: 56em) {
   .input_col, .results_col {
     width: 49.25%;
     float: left;
@@ -438,20 +484,6 @@ tr:nth-child(odd) td {
   .input_col {
     margin-right: 1.5%; }
 
-  .small_screen {
-    display: none; }
-
-  .large_screen {
-    display: block; }
-
-  .shareboxes_low {
-    text-align: right;
-    float: right;
-    margin-top: -1.8em; }
-
-  input.submit-button, input.settings {
-    font-size: 18px; } }
-@media only screen and (min-width: 56em) {
   .intro_area {
     top: 5em;
     bottom: 2em;

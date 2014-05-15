@@ -4,9 +4,13 @@
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>JS NICE: Deobfuscate your Javascript code</title>
+	<title>JS NICE: JavaScript Deobfuscator, Pretty Printer, Deminifier, Type Annotator</title>
 	<meta name="description" content="JS NICE | Software Reliability Lab in ETH" />
+	<style type="text/css">
+  .wf-loading body {visibility: hidden;}
+  </style>
 	<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
+	<link type="text/css" rel="stylesheet" href="css/jquery.dropdown.css" />
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 	<script src="js/codemirror.js"></script>
 	<link rel="stylesheet" href="css/codemirror.css">
@@ -15,7 +19,7 @@
 	  (function(d) {
 	    var config = {
 	      kitId: 'svt4rus',
-	      scriptTimeout: 3000
+	      scriptTimeout: 5000
 	    },
 	    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
 	  })(document);
@@ -33,38 +37,73 @@
 					<a href="http://www.srl.inf.ethz.ch" target="_blank"><img id="srl_logo" src="img/js_nice-logo_knockout.png"></a>
 					</span>
 					<span class='tagline'>
-						<div class='iphone_landscape'>
-							Deobfuscate your Javascript Code
+						<div class='large_screen'>
+							JavaScript Deobfuscator, Pretty Printer, Deminifier, Type Annotator
 						</div>
 					</span>
 				</div>
-				<ul class=" clearfix">
-					<li><a href="http://www.srl.inf.ethz.ch" target="_blank">about</a></li>
+				<ul class=" clearfix ">
+					<li><a href="http://www.srl.inf.ethz.ch" target="_blank">About</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 
+	<div id="dropdown-1" class="dropdown dropdown-tip">
+	    <ul class="dropdown-menu">
+	    	<li><label for="rename"><input type="checkbox" id="rename" checked></input>Rename local variables</label></li>
+	    	<li><label for="types"><input type="checkbox" id="types" checked></input>Show types</label></li>
+  	    	<li class="dropdown-divider"></li>
+	    	<li><label for="suggest"><input type="checkbox" id="suggest">
+	    	</input>Iteractive renames<br>(click on names to change)</br></b></label></li>
+<!--  	    	<li class="dropdown-divider" id="setting1"></li>
+	    	<li class="dropdown-text" id="setting2">Click "Deobfuscate" for the setting change to take effect</li>-->
+	    </ul>
+	</div>
+
+	<div id="dropdown-2" class="dropdown dropdown-tip">
+	    <ul class="dropdown-menu" id="rename-items">
+	    	<li><a href="#">x</a></li>
+	    	<li><a href="#">y</a></li>
+	    </ul>
+	</div>
+
+
 	<div class="container" >
 		<div class="content_wrapper" id="tool" >
 			<div class='clearfix app_section'>
 				<div class='input_col'>
-					<div class='input_header clearfix'><h5>Enter JavaScript</h5> <input type="submit" class="submit-button" name="submit" id="submit" value="Deobfuscate"></div>
-						<textarea rows="16" cols="120" id="inputjs" class='input_section'>
-function x() {
-  var i = 0;
-  return i;
+					<div class='input_header clearfix'><h5><div class='large_screen title'>Enter&nbsp;</div>JavaScript</h5>
+					<input type="submit" class="submit-button" name="submit" id="submit" value="&nbsp;&nbsp;Deobfuscate&nbsp;&nbsp;">
+					<input type="submit" class="settings" name="settings" id="settings" value="" data-dropdown="#dropdown-1">
+
+					</div>
+<textarea rows="16" cols="120" id="inputjs" class='input_section '>
+// Paste code here.
+function testFunction() {
+  var a = document.getElementById('title');
+  a.innerHTML = 'Hello';
 }
-						</textarea>
+</textarea>
 				</div>
 				<div class='results_col'>
 					<div class='results_area'>
-						<div class='input_header clearfix'><h5>Results</h5> <input type="submit" class="settings" name="settings" id="settings" value="customize">
+						<div class='input_header clearfix'><h5>Results</h5>
+
+
 						</div>
 						<textarea rows="16" cols="120" id="outputjs" readonly="" class='input_section'>
 
 						</textarea>
 					</div>
+
+					<div class="intro_area_overlay hidden" id="settings_change">
+						<div class='notice_area' >
+							<div class='input_header clearfix'><h5>Changed settings: Click "Deobfuscate" to see updated code</h5>
+							</div>
+						</div>
+					</div>
+
 					<div class='intro_area_overlay' id='intro_area_overlay'>
 						<div class='intro_area' >
 							<div class='input_header clearfix'><h5>What JS Nice Does</h5>
@@ -108,6 +147,7 @@ function x() {
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script src="js/global.js"></script>
+	<script src="js/jquery.dropdown.min.js"></script>
 </body>
 
 </html>

@@ -3903,6 +3903,22 @@
         }
       }
     }),
+    
+    getLineTokens: function(line, state) {
+    	var doc = this.doc;
+    	var res = [];
+    	if (state === undefined) {
+    	  return getStateBefore(this, line.line, false);
+    	}
+    	var mode = doc.mode;
+        var stream = new StringStream(line.text, this.options.tabSize);
+        while (!stream.eol()) {
+          stream.start = stream.pos;
+          var style = readToken(mode, stream, state);
+          res.push({ start:stream.start, end:stream.pos, style:style });
+        }
+        return res;
+    },
 
     // Fetch the parser token for a given character. Useful for hacks
     // that want to inspect the mode state (say, for completion).

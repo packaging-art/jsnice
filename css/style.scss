@@ -34,7 +34,7 @@ html {height: 100%;overflow-y: scroll;}
 
 body {@extend .copy; font-size:15px; color:#47484c; line-height:1.7em; background:#faf9f7;}
 
-.wf-loading body {visibiility: hidden;}
+.wf-loading .async {visibiility: hidden;}
 a {text-decoration:none;color:$brand_color;}
 
 a:hover {color:#38afd1;}
@@ -160,16 +160,17 @@ form {position:relative; margin-bottom:30px;}
 		border-color: $brand_color;
 	}
 
-	input.submit-button, input.settings {display:block; margin:20px auto; border:none; border-radius:1px; background:$brand_color; color:#FFF; font-size:15px; text-transform:uppercase; padding:5px 20px; @extend .heading; -webkit-font-smoothing: antialiased; -webkit-appearance: none;
+	input.submit-button, input.settings {display:block; margin:20px auto; border:none; border-radius:1px; background:$brand_color; color:#FFF; font-size:15px; text-transform:uppercase; padding:5px 13px; @extend .heading; -webkit-font-smoothing: antialiased; -webkit-appearance: none;
 float: right;
 display: inline-block;
-margin: 9px 10px 0 10px;
+margin:11px 10px 0 8px;
 }
 	input.submit-button:hover, input.settings:hover {background:$hover_color; cursor:pointer;}
 
-input.settings {line-height: 1.2;}
+input.settings, input.settings:hover {line-height: 1.2; width: 32px; height: 28px; background-image: url(../img/cogs.png); background-repeat: no-repeat; background-color: $brand_color; background-position:top left; background-size: cover; padding: 0 ; margin-left: 0; margin-right:0;}
+
 .button {display:inline-block; background:#333; padding:0px 8px; margin:10px 0px; color:#fff;}
-.button:hover  {background:$hover_color;}
+.button:hover, input.settings:hover  {background-color:$hover_color;}
 
 iframe#tool_results {margin:30px 0; display:none; /*background:#FFF; border:2px solid #d9d9d9; padding:20px;*/}
 #ajax-loader {position:absolute; top:2px; right:10px; display:none;}
@@ -207,6 +208,17 @@ tr:nth-child(odd) td {background:#f6f6f6;}
 .tab_controls li:hover {cursor:pointer;color:#38afd1;}
 .tab_controls li.selected {font-weight:700;}
 
+.dropdown .dropdown-menu, .dropdown .dropdown-panel {
+	border-radius: 2px;
+	box-shadow: 0 2px 7px rgba(0, 0, 0, .2);
+	padding: 20px 5px 13px;
+	li + li {margin-top: .25em;}
+	input {display: inline-block; margin-right: .5em;}
+}
+.dropdown .dropdown-menu .dropdown-divider {
+	border-top: solid 1px $neutral_gray;
+	margin: 13px 0;
+}
 
 .small_screen, .medium_screen {display: block;}
 .large_screen, .very_large_screen, .iphone_landscape {display: none; visibiility: hidden;}
@@ -215,11 +227,10 @@ tr:nth-child(odd) td {background:#f6f6f6;}
 .iphone_landscape {display: block;}
 }
 @media only screen and (min-width: 42em) {
-.input_col, .results_col {width: 49.25%; float:left; margin-bottom: 0;}
-.input_col {margin-right: 1.5%;}
 
 .small_screen {display: none;}
 .large_screen {display: block;}
+.large_screen.title {display: inline-block;}
 
 .shareboxes_low {
 text-align: right;
@@ -227,10 +238,14 @@ float: right;
 margin-top: -1.8em;
 }
 
-input.submit-button, input.settings {font-size:18px; }
+input.submit-button, input.settings {font-size:18px; margin-top: 9px;}
+
+input.settings, input.settings:hover {width: 35px; height: 31px;}
 }
 
 @media only screen and (min-width: 56em) {
+.input_col, .results_col {width: 49.25%; float:left; margin-bottom: 0;}
+.input_col {margin-right: 1.5%;}
 
 .intro_area {
 
