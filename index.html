@@ -3,13 +3,136 @@
 <head profile="http://gmpg.org/xfn/11">
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>JS NICE: Clean up your Javascript code</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS NICE: JavaScript Deobfuscator, Pretty Printer, Deminifier, Type Annotator</title>
 	<meta name="description" content="JS NICE | Software Reliability Lab in ETH" />
-	<link rel="stylesheet" href="http://deadtype.ca/jsnice/css/reset.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="http://deadtype.ca/jsnice/css/style.css" type="text/css" media="screen" />
+	<style type="text/css">
+  .wf-loading body {visibility: hidden;}
+  </style>
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
+	<link type="text/css" rel="stylesheet" href="css/jquery.dropdown.css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 	<script src="js/codemirror.js"></script>
-	<link rel="stylesheet" href="http://deadtype.ca/jsnice/css/codemirror.css">
-	<script src="http://deadtype.ca/jsnice/js/javascript.js"></script>
+	<link rel="stylesheet" href="css/codemirror.css">
+	<script src="js/javascript.js"></script>
+	<script type="text/javascript">
+	  (function(d) {
+	    var config = {
+	      kitId: 'svt4rus',
+	      scriptTimeout: 5000
+	    },
+	    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+	  })(document);
+	</script>
+
+
+</head>
+
+<body>
+	<div id="header_wrapper">
+		<div id="header" class='content_wrapper'>
+			<div id="nav">
+				<div class='srl'>
+					<span class="main_logo">
+					<a href="http://www.srl.inf.ethz.ch" target="_blank"><img id="srl_logo" src="img/js_nice-logo_knockout.png"></a>
+					</span>
+					<span class='tagline'>
+						<div class='large_screen'>
+							JavaScript Deobfuscator, Pretty Printer, Deminifier, Type Annotator
+						</div>
+					</span>
+				</div>
+				<ul class=" clearfix ">
+					<li><a href="http://www.srl.inf.ethz.ch" target="_blank">About</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="dropdown-1" class="dropdown dropdown-tip">
+	    <ul class="dropdown-menu">
+	    	<li><label for="rename"><input type="checkbox" id="rename" checked></input>Rename local variables</label></li>
+	    	<li><label for="types"><input type="checkbox" id="types" checked></input>Show types</label></li>
+  	    	<li class="dropdown-divider"></li>
+	    	<li><label for="suggest"><input type="checkbox" id="suggest">
+	    	</input>Iteractive renames<br>(click on names to change)</br></b></label></li>
+<!--  	    	<li class="dropdown-divider" id="setting1"></li>
+	    	<li class="dropdown-text" id="setting2">Click "Deobfuscate" for the setting change to take effect</li>-->
+	    </ul>
+	</div>
+
+	<div id="dropdown-2" class="dropdown dropdown-tip">
+	    <ul class="dropdown-menu" id="rename-items">
+	    	<li><a href="#">x</a></li>
+	    	<li><a href="#">y</a></li>
+	    </ul>
+	</div>
+
+
+	<div class="container" >
+		<div class="content_wrapper" id="tool" >
+			<div class='clearfix app_section'>
+				<div class='input_col'>
+					<div class='input_header clearfix'><h5><div class='large_screen title'>Enter&nbsp;</div>JavaScript</h5>
+					<input type="submit" class="submit-button" name="submit" id="submit" value="&nbsp;&nbsp;Deobfuscate&nbsp;&nbsp;">
+					<input type="submit" class="settings" name="settings" id="settings" value="" data-dropdown="#dropdown-1">
+
+					</div>
+<textarea rows="16" cols="120" id="inputjs" class='input_section '>
+// Paste code here.
+function testFunction() {
+  var a = document.getElementById('title');
+  a.innerHTML = 'Hello';
+}
+</textarea>
+				</div>
+				<div class='results_col'>
+					<div class='results_area'>
+						<div class='input_header clearfix'><h5>Results</h5>
+
+
+						</div>
+						<textarea rows="16" cols="120" id="outputjs" readonly="" class='input_section'>
+
+						</textarea>
+					</div>
+
+					<div class="intro_area_overlay hidden" id="settings_change">
+						<div class='notice_area' >
+							<div class='input_header clearfix'><h5>Changed settings: Click "Deobfuscate" to see updated code</h5>
+							</div>
+						</div>
+					</div>
+
+					<div class='intro_area_overlay' id='intro_area_overlay'>
+						<div class='intro_area' >
+							<div class='input_header clearfix'><h5>What JS Nice Does</h5>
+							</div>
+							<div class="intro_slide">
+								Welcome to JS NICE — we deobfuscate Javascript Code
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer" class='content_wrapper'>
+		<p>&copy; JS NICE | jsnice.org | <a href="http://www.srl.inf.ethz.ch" target="_blank">Software Reliability Lab</a>, <a href="http://www.inf.ethz.ch" target="_blank">Computer Science Department</a>, <a href="http://www.ethz.ch/index_EN" target="_blank">ETH Zurich</a></p>
+		<div class="shareboxes_low clearfix">
+			<div class="sharebox">
+				<div class="fb-like"   data-show-faces="false" data-layout="button_count" data-width="90"></div>
+			</div>
+			<div class="sharebox ">
+				<div class="g-plus" data-action="share" data-annotation="bubble"></div>
+			</div>
+			<div class="sharebox">
+				<a href="http://twitter.com/share" class="twitter-share-button"  data-text="EventRacer" data-via="">Tweet</a>
+			</div>
+		</div>
+	</div>
+
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-43783024-1']);
@@ -21,149 +144,10 @@
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	  })();
 	</script>
-	<script type="text/javascript" charset="utf-8">
-		//Load Twitter
-	    window.twttr = (function (d,s,id) {
-	        var t, js, fjs = d.getElementsByTagName(s)[0];
-	        if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
-	        js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
-	        return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
-	      }(document, "script", "twitter-wjs"));
-		//Load Facebook
-		(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=456516547700866";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-		//Load G+
-		(function() {
-			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-			po.src = 'https://apis.google.com/js/platform.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-		})();
-	</script>
-<script type="text/javascript" src="//use.typekit.net/mau1gom.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-</head>
 
-<body>
-	<div id="header_wrapper">
-		<div id="header">
-			<div id="nav">
-				<div class='srl'>
-					<a href="http://www.srl.inf.ethz.ch" target="_blank"><img id="srl_logo" src="img/srl_logo.png"></a>
-				</div>
-				<ul class="clearfix">
-					<li class="selected"><a href="#tool">JS Nice</a></li><li><a href="#documentation">Documentation</a></li><li><a href="#team">Team</a></li><li><a href="#contact">Contact</a></li>
-				</ul>
-				<div class="shareboxes">
-					<div class="sharebox">
-						<div class="fb-like"   data-show-faces="false" data-layout="button_count" data-width="90"></div>
-					</div>
-					<div class="sharebox g_plus">
-						<div class="g-plus" data-action="share" data-annotation="bubble"></div>
-					</div>
-					<div class="sharebox">
-						<a href="http://twitter.com/share" class="twitter-share-button"  data-text="EventRacer" data-via="">Tweet</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-<div class="container" >
-	<div class="post" id="tool" >
-		<img id="logo" src="img/js_nice-logo.png">
-		<h1>Clean up your Javascript code</h1>
-		<div class="intro">Optional introduction goes here... Delete if not needed</font></div>
-		<div class='clearfix app_section'>
-			<div class='input_col'>
-				<div class='input_header'><h5>Enter JavaScript</h5></div>
-					<textarea rows="16" cols="120" id="inputjs" class='input_section'>
-function x() {
-  var i = 0;
-  return i;
-}
-					</textarea>
-			</div>
-			<div class='results_col'>
-				<div class='input_header'><h5>Result</h5></div>
-					<textarea rows="16" cols="120" id="outputjs" readonly="" class='input_section'></textarea>
-			</div>
-		</div>
-		<div class='control_button'>
-				<input type="button" class="submit-button" onclick="javascript:beautify()" value="Clean Up">
-		</div>
-	</div>
-
-	<div class="post" id="documentation">
-		<h2>Documentation</h2>
-		<h3>About JS NICE</h3>
-		<p>Optional section to describe JS NICE</p>
-	</div>
-
-	<div class="post" id="team" >
-		<h2>Team</h2>
-		<div class="three_cols clearfix">
-			<div>
-				<img src="img/vrpic.jpg" title="Veselin Raychev" alt="Veselin Raychev" />
-				<h3>Veselin Raychev</h3>
-				<p>PhD Student <br />Software Reliability Lab, ETH Zurich<br />
-					<a href="http://www.srl.inf.ethz.ch/raychev.php" target="_blank">Website</a>
-				</p>
-			</div>
-			<div>
-				<img src="img/mvpic.jpg" title="Martin Vechev" alt="Martin Vechev" />
-				<h3>Prof. Martin Vechev</h3>
-				<p>Assistant Professor<br />Software Reliability Lab, ETH  Zurich<br />
-					<a href="http://www.srl.inf.ethz.ch/vechev.php" target="_blank">Website</a>
-				</p>
-			</div>
-			<div>
-				<img src="img/mspic.jpg" title="Manu Sridharan" alt="Manu Sridharan" />
-				<h3>Dr. Manu Sridharan</h3>
-				<p>Research Staff Member <br />
-				IBM T.J. Watson Research<br />
-                                USA  <br/>
-					<a href="http://researcher.watson.ibm.com/researcher/view.php?person=us-msridhar" target="_blank">Website</a>
-				</p>
-			</div>
-		</div>
-	</div>
-
-	<div class="post" id="contact">
-		<h2>Contact</h2>
-		<p style="text-align:center;">Have a question or comment? We'd love to hear feedback on your experience with JS NICE. You can reach us at <br />
-			 <a href="mailto:team@jsnice.org" class="contact_email">team@jsnice.org</a>
-		</p>
-	</div>
-</div>
-
-
-<div id="footer">
-	<p>&copy; JS NICE | jsnice.org | <a href="http://www.srl.inf.ethz.ch" target="_blank">Software Reliability Lab</a>, <a href="http://www.inf.ethz.ch" target="_blank">Computer Science Department</a>, <a href="http://www.ethz.ch/index_EN" target="_blank">ETH Zurich</a></p>
-</div>
-
-
-<script>
-	var editor = CodeMirror.fromTextArea(document.getElementById("inputjs"), {
-	    mode: "javascript",
-	    lineNumbers: true,
-	    lineWrapping: true
-	});
-	var editor = CodeMirror.fromTextArea(document.getElementById("outputjs"), {
-	    mode: "javascript",
-	    lineNumbers: true,
-	    lineWrapping: true
-	});
-</script>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script src="js/jquery.scrollTo.js"></script>
-<script src="js/jquery.nav.js"></script>
-<script src="js/global.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="js/global.js"></script>
+	<script src="js/jquery.dropdown.min.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,24 @@
+.copy, body {
+  font-family: "ff-dagny-web-pro",sans-serif;
+  font-style: normal;
+  font-weight: 400; }
+
+.heading, h1, h2, h3, h5, .tagline, #nav li, input.submit-button, input.settings {
+  font-family: din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 400; }
+
+.code_block, .input_section, input.square, .CodeMirror-wrap {
+  font-family: "source-code-pro",sans-serif;
+  font-style: normal;
+  font-weight: 400; }
+
+.content_wrapper {
+  width: 94%;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1500px; }
+
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -8,12 +29,13 @@ html {
   overflow-y: scroll; }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   color: #47484c;
-  font-weight: normal;
   line-height: 1.7em;
   background: #faf9f7; }
+
+.wf-loading .async {
+  visibiility: hidden; }
 
 a {
   text-decoration: none;
@@ -22,10 +44,7 @@ a {
 a:hover {
   color: #38afd1; }
 
-h1, h2, h3, h5 {
-  font-family: din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 400;
+h1, h2, h3, h5, .tagline {
   -webkit-font-smoothing: antialiased; }
 
 h1 {
@@ -119,52 +138,62 @@ h5 {
   top: 0;
   left: 0;
   position: fixed;
-  z-index: 10; }
+  z-index: 100000; }
 
 #header {
-  width: 900px;
+  width: 100%;
   margin: 0px auto;
   position: relative; }
 
 #logo {
-  margin: 120px auto 15px;
+  margin: 100px auto 10px;
   width: 14em;
   display: block; }
 
 .srl {
-  width: 5em;
-  position: fixed;
+  position: absolute;
   top: 17px;
-  left: 2.5em; }
+  margin-left: 3.5%; }
+  .srl .main_logo {
+    width: 4.9em;
+    display: inline-block;
+    float: left; }
+  .srl .tagline {
+    display: inline-block;
+    color: white;
+    white-space: nowrap;
+    float: left;
+    margin-left: .5em;
+    margin-top: .15em;
+    font-size: 17px; }
   .srl img {
     width: 100%; }
 
+.wf-inactive .srl {
+  width: 30em; }
+
 #nav {
-  width: 900px;
+  width: 100%;
   padding: 0;
   text-transform: lowercase; }
 
 #nav ul {
-  width: 100%;
+  width: 94%;
   margin: 0 auto;
   padding: 0;
-  text-align: center;
-  display: inline-block; }
+  text-align: right; }
 
 #nav li {
   text-align: center;
   display: inline-block;
   width: auto;
-  font-family: din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 400;
   -webkit-font-smoothing: antialiased; }
 
 #nav li a {
   font-size: 18px;
   font-weight: normal;
   display: block;
-  padding: 15px 20px;
+  padding: 19px 20px;
   border-bottom: none;
   color: #FFF; }
 
@@ -176,20 +205,27 @@ h5 {
   margin: 1em 0 4em; }
 
 .app_section {
-  margin: 0 -8.5em;
-  margin-bottom: 3em; }
+  margin-top: 7em; }
   .app_section textarea {
     width: 100%; }
 
-.input_col, .results_col {
-  width: 49%;
-  float: left; }
+#tool h1 {
+  margin-bottom: 50px; }
 
-.input_col {
-  margin-right: 2%; }
+.input_col, .results_col {
+  width: 100%;
+  float: left;
+  margin-bottom: 1em; }
 
 .input_header {
-  text-align: center; }
+  text-align: left;
+  background: #dedced; }
+  .input_header h5 {
+    padding: 13px 0 10px 20px;
+    text-align: left;
+    margin: 0;
+    display: inline-block;
+    float: left; }
 
 .input_section, input.square, .CodeMirror-wrap {
   color: #46474b;
@@ -200,6 +236,39 @@ h5 {
 
 .input_section:focus, input.square:focus, .CodeMirror-wrap:focus {
   border-color: #5e57a6; }
+
+.results_col {
+  position: relative; }
+
+.intro_area_overlay {
+  z-index: 10000;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.intro_area {
+  background: rgba(212, 212, 212, 0.5);
+  z-index: 10000;
+  position: absolute;
+  top: 4.5em;
+  bottom: 1.5em;
+  left: 1em;
+  right: 1em;
+  overflow: hidden; }
+  .intro_area .input_header {
+    background: rgba(212, 212, 212, 0.5); }
+  .intro_area h5 {
+    text-align: center;
+    padding-left: 0;
+    width: 100%; }
+
+.intro_slide {
+  overflow-y: scroll;
+  padding: 20px 20px 0;
+  line-height: 1.4;
+  height: 100%; }
 
 form {
   position: relative;
@@ -212,22 +281,38 @@ input.square {
 input.square:focus {
   border-color: #5e57a6; }
 
-input.submit-button {
+input.submit-button, input.settings {
   display: block;
   margin: 20px auto;
   border: none;
+  border-radius: 1px;
   background: #5e57a6;
   color: #FFF;
-  font-size: 18px;
+  font-size: 15px;
   text-transform: uppercase;
-  padding: 5px 20px;
-  font-family: din-condensed-web, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  -webkit-font-smoothing: antialiased; }
+  padding: 5px 13px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-appearance: none;
+  float: right;
+  display: inline-block;
+  margin: 11px 10px 0 8px; }
 
-input.submit-button:hover {
-  background: #46474b;
+input.submit-button:hover, input.settings:hover {
+  background: #514b90;
   cursor: pointer; }
+
+input.settings, input.settings:hover {
+  line-height: 1.2;
+  width: 32px;
+  height: 28px;
+  background-image: url(../img/cogs.png);
+  background-repeat: no-repeat;
+  background-color: #5e57a6;
+  background-position: top left;
+  background-size: cover;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0; }
 
 .button {
   display: inline-block;
@@ -236,8 +321,8 @@ input.submit-button:hover {
   margin: 10px 0px;
   color: #fff; }
 
-.button:hover {
-  background: #e0ba35; }
+.button:hover, input.settings:hover {
+  background-color: #514b90; }
 
 iframe#tool_results {
   margin: 30px 0;
@@ -265,6 +350,16 @@ iframe#tool_results {
   top: 15px;
   right: 20px; }
 
+.shareboxes_low {
+  margin: 0 auto;
+  text-align: left;
+  float: left;
+  margin-top: 1em; }
+  .shareboxes_low .sharebox {
+    display: inline-block;
+    float: inherit;
+    margin: 0 1em; }
+
 .sharebox {
   float: right; }
 
@@ -274,9 +369,8 @@ iframe#tool_results {
 #footer {
   margin: 0 auto;
   font-size: 0.9em;
-  width: 900px;
-  padding: 30px 0 40px 0;
-  text-align: center; }
+  padding: 30px 0 10px 0;
+  text-align: left; }
 
 table {
   font-size: 13px;
@@ -335,33 +429,92 @@ tr:nth-child(odd) td {
 .tab_controls li.selected {
   font-weight: 700; }
 
+.dropdown .dropdown-menu, .dropdown .dropdown-panel {
+  border-radius: 2px;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+  padding: 20px 5px 13px; }
+  .dropdown .dropdown-menu li + li, .dropdown .dropdown-panel li + li {
+    margin-top: .25em; }
+  .dropdown .dropdown-menu input, .dropdown .dropdown-panel input {
+    display: inline-block;
+    margin-right: .5em; }
+
+.dropdown .dropdown-menu .dropdown-divider {
+  border-top: solid 1px rgba(212, 212, 212, 0.5);
+  margin: 13px 0; }
+
+.small_screen, .medium_screen {
+  display: block; }
+
+.large_screen, .very_large_screen, .iphone_landscape {
+  display: none;
+  visibiility: hidden; }
+
+@media only screen and (min-width: 32em) {
+  .iphone_landscape {
+    display: block; } }
+@media only screen and (min-width: 42em) {
+  .small_screen {
+    display: none; }
+
+  .large_screen {
+    display: block; }
+
+  .large_screen.title {
+    display: inline-block; }
+
+  .shareboxes_low {
+    text-align: right;
+    float: right;
+    margin-top: -1.8em; }
+
+  input.submit-button, input.settings {
+    font-size: 18px;
+    margin-top: 9px; }
+
+  input.settings, input.settings:hover {
+    width: 35px;
+    height: 31px; } }
+@media only screen and (min-width: 56em) {
+  .input_col, .results_col {
+    width: 49.25%;
+    float: left;
+    margin-bottom: 0; }
+
+  .input_col {
+    margin-right: 1.5%; }
+
+  .intro_area {
+    top: 5em;
+    bottom: 2em;
+    left: 4em;
+    right: 2em; }
+
+  .very_large_screen {
+    display: block; }
+
+  .medium_screen {
+    display: none; } }
 /* Clear Floated Elements
 ----------------------------------------------------------------------------------------------------*/
 /* http://sonspring.com/journal/clearing-floats */
-.clear {
-  clear: both;
-  display: block;
-  overflow: hidden;
-  visibility: hidden;
-  width: 0;
-  height: 0; }
-
-/* http://perishablepress.com/press/2008/02/05/lessons-learned-concerning-the-clearfix-css-hack */
+.clearfix:before,
 .clearfix:after {
-  clear: both;
-  content: ' ';
-  display: block;
-  font-size: 0;
-  line-height: 0;
-  visibility: hidden;
-  width: 0;
-  height: 0; }
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
 
+.clearfix:after {
+  clear: both; }
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
 .clearfix {
-  display: inline-block; }
+  *zoom: 1; }
 
-* html .clearfix {
-  height: 1%; }
-
-.clearfix {
-  display: block; }
+.hidden {
+  display: none !important;
+  visibility: hidden; }
